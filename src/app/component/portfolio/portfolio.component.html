@@ -1,0 +1,110 @@
+<div class="container">
+<aside class="sidebar">
+    <div class="profile">
+        <img src="kmk.jpg" alt="Profile Image" class="profile-image" />
+    </div>
+    <nav class="menu">
+        <ul>
+            <li><a (click)="changeSection('about')">About</a></li>
+            <li><a (click)="changeSection('education')">Education</a></li>
+            <li><a (click)="changeSection('experience')">Experience</a></li>
+            <li><a (click)="changeSection('skills')">Skills</a></li>
+            <li><a (click)="changeSection('projects')">Projects</a></li>
+            <li><a (click)="changeSection('resume')">Resume</a></li>
+            <li><a (click)="changeSection('contact')">Contact</a></li>
+        </ul>
+    </nav>
+</aside>
+
+<div class="content">
+    <ng-container [ngSwitch]="currentSection">
+        <!--about-->
+        <div *ngSwitchCase="'about'">
+            <div>
+                <h2>About Me</h2>
+                <p>
+                    I am KUMMARAPURUGU MANIKANTA, a web developer with nearly 2 years of experience.
+                    I thrive in challenging environments and am committed to personal and organizational growth.
+                </p>
+                <p>
+                    I have a background in both technology and finance, having worked extensively in web development
+                    and customer service roles. My goal is to leverage my skills and knowledge to make a positive impact
+                    in any organization I work with.
+                </p>
+            </div>
+
+        </div>
+        <div *ngSwitchCase="'education'">
+            <div>
+                <h2>Education</h2>
+                <ul>
+                    <li>B.Tech (Mechanical Engineering) - BVC Engineering College, J.N.T.U. Kakinada, 2014-2018, 72.77%
+                    </li>
+                    <li>Technology Entrepreneurship Program - Indian School of Business, 2016-2018, A+</li>
+                    <li>Intermediate (MPC) - Aditya Junior College, 2012-2014, 90.7%</li>
+                    <li>SSC - Sri Santhi Convent High School, 2011-2012, 9.3%</li>
+                </ul>
+            </div>
+
+        </div>
+        <div *ngSwitchCase="'experience'">
+            <div>
+                <h2>Experience</h2>
+                <h3>Web Developer - Abbigale Cloud Services</h3>
+                <p><strong>Duration:</strong> 1.9 years</p>
+                <ul>
+                    <li>Worked on Emedicall Angular Project, fixing bugs and improving performance.</li>
+                    <li>Converted Angular projects to PrimeNg based Angular projects.</li>
+                    <li>Created CRUD pages in Angular for Reality Manager Project and in React for VoterSurvey Project.
+                    </li>
+                    <li>Developed components including Progress Notes, Editor, Video Player, and more.</li>
+                    <li>Performed manual testing and built applications for production.</li>
+                </ul>
+
+                <h3>Customer Service Provider - State Bank of India</h3>
+                <p><strong>Duration:</strong> 3 years</p>
+                <ul>
+                    <li>Provided customer service and support, gaining strong knowledge in banking and insurance.</li>
+                </ul>
+            </div>
+
+        </div>
+        <div *ngSwitchCase="'skills'">
+            <div>
+                <h2>Technical Skills</h2>
+                <ul>
+                    <li><strong>Technologies:</strong> AWS Cloud, Oracle Virtual Box, Angular, PrimeNg, React, MySQL
+                    </li>
+                    <li><strong>Languages:</strong> HTML, PHP, TypeScript</li>
+                    <li><strong>Software:</strong> AutoCAD, SolidWorks</li>
+                    <li><strong>Office Suite:</strong> MS Office</li>
+                </ul>
+            </div>
+
+        </div>
+        <div *ngSwitchCase="'projects'">
+            <div>
+                <h2>Projects</h2>
+                <h3>Krimewatch</h3>
+                <p>Conversion of Krimewatch and Gear For Need projects from Angular to PrimeNg based Angular projects.
+                </p>
+
+                <h3>Abbigale Internal Project</h3>
+                <p>Web application changes for the internal certification platform as per requirements.</p>
+            </div>
+
+        </div>
+        <div *ngSwitchCase="'resume'">Resume Content Here</div>
+        <div *ngSwitchCase="'contact'">
+            <div>
+                <h2>Contact Information</h2>
+                <p><strong>Email:</strong> {{email}}</p>
+                <p><strong>Mobile:</strong> +917032797119, 8125196895</p>
+                <p><strong>Permanent Address:</strong> Door no 4-114, Main Road, Z. Medapadu, Mandapeta Mandal, East
+                    Godavari (Dt.), Andhra Pradesh, Pincode- 533341</p>
+            </div>
+
+        </div>
+    </ng-container>
+</div>
+</div>
