@@ -3,6 +3,7 @@
     background-color: #e0f7fa; /* Light ocean blue for the whole screen */
     min-height: 100vh; /* Ensure it covers the full height */
     display: flex; /* Use flexbox for layout */
+
 }
 
 /* Sidebar styles */
@@ -55,7 +56,9 @@
 .content {
     flex: 1; /* Allow content to take the remaining space */
     padding: 20px;
-    background-color: #f4f4f4; /* Light gray background for content area */
+    /* background-color: blueviolet;  */
+    background-image:url('../../../../public/bg.jpg') ;
+
     display: flex;
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
