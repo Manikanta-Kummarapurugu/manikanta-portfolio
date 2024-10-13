@@ -1,25 +1,26 @@
 /* Set the overall container with a background color */
 .container {
-    background-color: #e0f7fa; /* Light ocean blue for the whole screen */
-    min-height: 100vh; /* Ensure it covers the full height */
-    display: flex; /* Use flexbox for layout */
-
+    background-color: #e0f7fa; 
+    min-height: 100vh; 
+    display: flex; 
 }
 
 /* Sidebar styles */
 .sidebar {
-    width: 250px;
-    height: 100vh; /* Full height for the sidebar */
-    background-color: #0077be; /* Ocean blue */
+    width: 250px; /* Fixed width on larger screens */
+    height: 100vh; 
+    background-color: #0077be; 
     color: white;
     padding: 20px;
+    box-sizing: border-box; /* Include padding in width calculations */
+    position: fixed; /* Fix the sidebar on larger screens */
 }
 
 /* Profile styles */
 .profile {
     text-align: center;
     margin-bottom: 20px;
-    margin-top: 150px; /* Adjust as needed */
+    margin-top: 150px; 
 }
 
 /* Profile image styles */
@@ -36,7 +37,7 @@
 }
 
 .menu li {
-    margin: 15px 0; /* Spacing between menu items */
+    margin: 15px 0; 
 }
 
 .menu a {
@@ -44,8 +45,8 @@
     text-decoration: none;
     font-weight: bold;
     font-size: large;
-    display: block; /* Make links block-level for better spacing */
-    text-align: center; /* Center align text in menu */
+    display: block; 
+    text-align: center; 
 }
 
 .menu a:hover {
@@ -54,31 +55,77 @@
 
 /* Content styles */
 .content {
-    flex: 1; /* Allow content to take the remaining space */
+    flex: 1; 
     padding: 20px;
-    /* background-color: blueviolet;  */
-    background-image:url('../../../../public/bg.jpg') ;
-
+    margin-left: 250px; /* Leave space for the sidebar on larger screens */
+    background-image: url('../../../../public/bg.jpg');
     display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
 }
 
 /* Centering the inner content */
 .content > div {
-    max-width: 800px; /* Limit the width of the content */
-    background-color: #ffffff; /* White background for the inner content */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    padding: 20px; /* Inner padding */
-    text-align: left; /* Align text to the left */
+    max-width: 800px; 
+    background-color: #ffffff;
+    border-radius: 8px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    padding: 20px;
+    text-align: left; 
+    margin: 20px; /* Add margin for spacing from edges */
 }
 
 /* Headings styles */
 h2 {
-    color: #0077be; /* Ocean blue color for headings */
+    color: #0077be; 
 }
 
 h3 {
-    color: #333; /* Darker color for subheadings */
+    color: #333; 
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack the sidebar and content */
+    }
+
+    .sidebar {
+        width: 100%; /* Full width for mobile */
+        height: auto; /* Auto height */
+        position: relative; /* Allow it to stack with content */
+        margin: 0; /* Remove any margin */
+    }
+
+    .content {
+        padding: 10px; /* Reduced padding for mobile */
+        margin-left: 0; /* Remove left margin on mobile */
+        width: 100%; /* Ensure full width for content */
+        background: none; /* Remove background if needed */
+        align-items: center; /* Center vertically on mobile */
+    }
+
+    .content > div {
+       justify-content: center; 
+       margin-right: 40px;
+    }
+
+    .profile-image {
+        width: 100px; /* Smaller profile image */
+        height: 100px; 
+    }
+
+    .menu a {
+        font-size: medium; /* Smaller text for menu */
+    }
+}
+
+@media (max-width: 480px) {
+    .menu a {
+        font-size: small; /* Even smaller text for extra small devices */
+    }
+
+    .profile {
+        margin-top: 50px; /* Adjust margin for smaller screens */
+    }
 }
